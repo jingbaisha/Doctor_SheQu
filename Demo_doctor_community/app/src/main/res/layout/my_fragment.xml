@@ -67,6 +67,7 @@
                 android:text="吴恩达"
                 android:textColor="@color/userblack"
                 android:textSize="17.5sp" />
+
         </LinearLayout>
 
         <Button

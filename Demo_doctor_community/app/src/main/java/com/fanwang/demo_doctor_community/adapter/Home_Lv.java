@@ -16,7 +16,7 @@ import com.fanwang.demo_doctor_community.R;
 public class Home_Lv extends BaseAdapter{
     private Context context;
     private LayoutInflater inflater;
-    private int[] data = new int[30];
+    private int[] data = new int[5];
 
     public Home_Lv(Context context) {
         this.context = context;
