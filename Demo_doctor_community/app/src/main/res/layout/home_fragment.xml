@@ -291,18 +291,9 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/iv_show_more"
-                android:orientation="vertical"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/y10"
-                android:background="@drawable/home_11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
             <com.fanwang.demo_doctor_community.commonality.SideTopListView
                 android:id="@+id/lv_home"
-                android:layout_marginTop="@dimen/y20"
+                android:layout_marginTop="@dimen/y7"
                 android:layout_marginLeft="@dimen/x22"
                 android:layout_marginRight="@dimen/x22"
                 android:divider="@color/gray_add_a"
@@ -312,7 +303,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
+            <LinearLayout
+                android:id="@+id/iv_show_more"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/y18"
+                android:background="@drawable/home_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </RelativeLayout>
+
+
 
     </com.fanwang.demo_doctor_community.custom.SideGroupLayout>
 

@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
-import com.fanwang.demo_doctor_community.custom.StarBar;
 import com.fanwang.demo_doctor_community.fragment.My_Order_Fragment_b;
 import com.flyco.tablayout.SlidingTabLayout;
 
@@ -28,8 +27,6 @@ public class Signed_a_activity extends Populace_Activity {
 
     @BindView(R.id.title_fragment_content)
     LinearLayout titleFragmentContent;
-    @BindView(R.id.star_doctor)
-    StarBar starDoctor;
     @BindView(R.id.stl_tab_signed)
     SlidingTabLayout stlTabSigned;
     @BindView(R.id.stl_tab_vp)
