@@ -9,12 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.activity.Serve_Activity;
+import com.fanwang.demo_doctor_community.adapter.Serve_Adapter_dialog_a;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,9 +70,10 @@ public class Serve_Fragment extends Fragment {
         super.onDestroyView();
         unbinder.unbind();
     }
-    @OnClick({R.id.rb_one,R.id.rb_two,R.id.rb_three,R.id.login_btn})
-    public void OnItemsOnclick(View view){
-        switch (view.getId()){
+
+    @OnClick({R.id.rb_one, R.id.rb_two, R.id.rb_three, R.id.login_btn})
+    public void OnItemsOnclick(View view) {
+        switch (view.getId()) {
             case R.id.rb_one:
             case R.id.rb_two:
             case R.id.rb_three:

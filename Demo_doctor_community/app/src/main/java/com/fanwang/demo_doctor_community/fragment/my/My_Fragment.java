@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.activity.Complaint_a;
+import com.fanwang.demo_doctor_community.activity.Member_a;
 import com.fanwang.demo_doctor_community.activity.My_Order;
 import com.fanwang.demo_doctor_community.activity.My_serve_bao;
 import com.fanwang.demo_doctor_community.activity.Touxiang;
@@ -35,8 +37,6 @@ public class My_Fragment extends Popuplace_Fragment {
     ImageView ivHomeSaoyisao;
     @BindView(R.id.title_fragment_content)
     LinearLayout titleFragmentContent;
-    @BindView(R.id.button)
-    Button button;
     @BindView(R.id.my_indent)
     LinearLayout myIndent;
     @BindView(R.id.my_serve)
@@ -59,6 +59,8 @@ public class My_Fragment extends Popuplace_Fragment {
     RelativeLayout myComplaintRl;
     @BindView(R.id.my_problem_rl)
     RelativeLayout myProblemRl;
+    @BindView(R.id.button_community_members)
+    Button buttonCommunityMembers;
     private Intent intent;
 
     @Nullable
@@ -74,7 +76,7 @@ public class My_Fragment extends Popuplace_Fragment {
 
     }
 
-    @OnClick({R.id.my_indent_rl, R.id.my_serve_bao,R.id.xcr_touxiang})
+    @OnClick({R.id.my_indent_rl, R.id.my_serve_bao, R.id.xcr_touxiang, R.id.my_complaint_rl, R.id.my_problem,R.id.button_community_members})
     public void OnItemsOnclick(View view) {
         switch (view.getId()) {
             case R.id.my_indent_rl:
@@ -89,6 +91,17 @@ public class My_Fragment extends Popuplace_Fragment {
             case R.id.xcr_touxiang:
                 intent = new Intent(getContext(), Touxiang.class);
                 startActivity(intent);
+                break;
+            case R.id.my_complaint_rl:
+                intent = new Intent(getContext(), Complaint_a.class);
+                startActivity(intent);
+                break;
+            case R.id.my_problem:
+                intent = new Intent(getContext(), Problem_a.class);
+                startActivity(intent);
+                break;
+            case R.id.button_community_members:
+                startActivity(new Intent(getContext(), Member_a.class));
                 break;
         }
 

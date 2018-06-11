@@ -17,15 +17,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.adapter.Serve_Adapter;
+import com.fanwang.demo_doctor_community.adapter.Serve_Adapter_dialog_a;
 import com.fanwang.demo_doctor_community.bean.JsonBean;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
@@ -91,6 +94,7 @@ public class Serve_Activity extends Populace_Activity {
     ArrayList<CustomTabEntity> list = new ArrayList<>();
     private Serve_Adapter adapter;
     private Intent intent;
+    private String tx="";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -166,7 +170,7 @@ public class Serve_Activity extends Populace_Activity {
         }
     }
 
-    @OnClick({R.id.tv_servre_moren, R.id.tv_servre_xiaoliang, R.id.tv_servre_pingjia, R.id.tv_servre_fujin,R.id.lin_liandong})
+    @OnClick({R.id.tv_servre_moren, R.id.tv_servre_xiaoliang, R.id.tv_servre_pingjia, R.id.tv_servre_fujin, R.id.lin_liandong, R.id.lin_shequ})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.tv_servre_moren:
@@ -183,6 +187,21 @@ public class Serve_Activity extends Populace_Activity {
                 break;
             case R.id.lin_liandong:
                 showPickerView();
+                break;
+            case R.id.lin_shequ:
+                if (!tx.equals("")) {
+                    MaterialDialog dialog = new MaterialDialog.Builder(this)
+                            .customView(R.layout.dialog_b, false)
+                            .build();
+
+                    ListView list = (ListView) dialog.findViewById(R.id.lv_dialog_a);
+                    Serve_Adapter_dialog_a adapter_dialog_a = new Serve_Adapter_dialog_a(this);
+                    list.setAdapter(adapter_dialog_a);
+
+                    dialog.show();
+                } else {
+                    Toast.makeText(this, "请先选择区域", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
@@ -217,10 +236,12 @@ public class Serve_Activity extends Populace_Activity {
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
                 //返回的分别是三个级别的选中位置
-                String tx = options1Items.get(options1).getPickerViewText() +
+                 tx =    options1Items.get(options1).getPickerViewText() +
                         options2Items.get(options1).get(options2) +
                         options3Items.get(options1).get(options2).get(options3);
+
                 Toast.makeText(Serve_Activity.this, "" + tx, Toast.LENGTH_SHORT).show();
+                tvSsq.setText(tx);
             }
         })
 

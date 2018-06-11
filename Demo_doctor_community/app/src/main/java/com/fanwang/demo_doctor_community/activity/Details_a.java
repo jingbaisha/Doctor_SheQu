@@ -92,7 +92,7 @@ public class Details_a extends Populace_Activity {
         };
 
         rcyServeA.setLayoutManager(layout1);
-
+        
         //添加自定义分割线
         DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         divider.setDrawable(ContextCompat.getDrawable(this, R.drawable.recyclerview_item_c));

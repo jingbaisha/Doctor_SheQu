@@ -17,6 +17,14 @@ public class Apponoitment_a_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
     private Context context;
     private LayoutInflater inflater;
     private int[] data=new int[10];
+    private Onclick_Items onclick_items;
+
+    public interface Onclick_Items{
+        void OnItems_Onclick(View view,int position);
+    }
+    public void SteOnClick_Items(Onclick_Items onclick_items){
+        this.onclick_items=onclick_items;
+    }
 
     public Apponoitment_a_Adapter(Context context) {
         this.context = context;
@@ -30,6 +38,12 @@ public class Apponoitment_a_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.apponitment_a, parent, false);
         MyViewHolder holder=new MyViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onclick_items.OnItems_Onclick(v, (Integer) v.getTag());
+            }
+        });
         return holder;
     }
 
@@ -37,6 +51,7 @@ public class Apponoitment_a_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder viewHolder= (MyViewHolder) holder;
         viewHolder.textView.setText(data[position]+" ");
+        viewHolder.itemView.setTag(position);
     }
 
     @Override

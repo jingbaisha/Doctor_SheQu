@@ -13,12 +13,13 @@ import com.fanwang.demo_doctor_community.R;
  * Created by edison on 2018/6/6.
  */
 
-public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class Complaint_a_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
     private Context context;
     private LayoutInflater inflater;
     private int[] data = new int[10];
 
-    public Apponoitment_b_Adapter(Context context) {
+    public Complaint_a_Adapter(Context context) {
         this.context = context;
         for (int i = 0; i < data.length; i++) {
             data[i] = 1 + i;
@@ -28,7 +29,7 @@ public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.apponitment_list_b, parent, false);
+        View view = inflater.inflate(R.layout.complaint_b, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -36,7 +37,7 @@ public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder viewHolder = (MyViewHolder) holder;
-        viewHolder.textView.setText(data[position] + "广州");
+        viewHolder.textView.setText(data[position] + " ");
     }
 
     @Override
@@ -49,7 +50,7 @@ public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.tv_ren_a);
+            textView = itemView.findViewById(R.id.tv_doctor_hao);
         }
     }
 }

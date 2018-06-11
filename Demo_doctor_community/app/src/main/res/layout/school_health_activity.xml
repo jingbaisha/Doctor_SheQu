@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"/>
 
     <RelativeLayout
+        android:id="@+id/school_liuyan"
         android:gravity="center"
         android:background="@color/white"
         android:layout_marginTop="@dimen/x20"
@@ -57,6 +58,7 @@
 
     <RelativeLayout
         android:gravity="center"
+        android:id="@+id/rl_fabu_xinxi"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y123">
@@ -98,6 +100,7 @@
         android:layout_height="@dimen/y2"/>
 
     <RelativeLayout
+        android:id="@+id/rl_jiangkang"
         android:gravity="center"
         android:background="@color/white"
         android:layout_width="match_parent"

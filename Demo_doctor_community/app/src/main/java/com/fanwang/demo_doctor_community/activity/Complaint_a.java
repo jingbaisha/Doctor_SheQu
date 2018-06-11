@@ -10,8 +10,8 @@ import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.adapter.MyPagerAdapter;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
-import com.fanwang.demo_doctor_community.fragment.Appointment_b;
-import com.fanwang.demo_doctor_community.fragment.My_Doctor_a;
+import com.fanwang.demo_doctor_community.fragment.my.Complaint_fragment_a;
+import com.fanwang.demo_doctor_community.fragment.my.Complaint_fragment_b;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
@@ -21,31 +21,29 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by edison on 2018/5/22.
+ * Created by edison on 2018/6/11.
  */
 
-public class My_Doctor extends Populace_Activity {
-
+public class Complaint_a extends Populace_Activity {
     @BindView(R.id.title_fragment_content)
     LinearLayout titleFragmentContent;
-    @BindView(R.id.tl_3)
-    SegmentTabLayout splMyDoctor;
+    @BindView(R.id.tl_comlaint_a)
+    SegmentTabLayout tlComlaintA;
+    @BindView(R.id.vp_my_complaint_a)
+    ViewPager vpMyComplaintA;
 
-    String[] data = new String[]{"我的家医", "预约医生"};
-    @BindView(R.id.vp_my_doctor)
-    ViewPager vpMyDoctor;
-
-    private ArrayList<Fragment> mList = new ArrayList<>();
     private TitleBackFragment titleBackFragment;
+    String[] data = new String[]{"待处理", "已处理"};
+    private ArrayList<Fragment> mList = new ArrayList<>();
     private MyPagerAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_doctor);
+        setContentView(R.layout.complaint_a);
         ButterKnife.bind(this);
-        initData();
         initView();
+        initData();
     }
 
     @Override
@@ -56,16 +54,16 @@ public class My_Doctor extends Populace_Activity {
 
     @Override
     public void initData() {
-        mList.add(new My_Doctor_a());
-        mList.add(new Appointment_b());
-        adapter= new MyPagerAdapter(getSupportFragmentManager(),mList,data);
-        vpMyDoctor.setAdapter(adapter);
-        splMyDoctor.setTabData(data);
+        mList.add(new Complaint_fragment_a());
+        mList.add(new Complaint_fragment_b());
+        tlComlaintA.setTabData(data);
+        adapter = new MyPagerAdapter(getSupportFragmentManager(), mList, data);
+        vpMyComplaintA.setAdapter(adapter);
 
-        splMyDoctor.setOnTabSelectListener(new OnTabSelectListener() {
+        tlComlaintA.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
-                vpMyDoctor.setCurrentItem(position);
+                vpMyComplaintA.setCurrentItem(position);
             }
 
             @Override
@@ -74,7 +72,7 @@ public class My_Doctor extends Populace_Activity {
             }
         });
 
-        vpMyDoctor.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        vpMyComplaintA.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -82,7 +80,7 @@ public class My_Doctor extends Populace_Activity {
 
             @Override
             public void onPageSelected(int position) {
-                splMyDoctor.setCurrentTab(position);
+                tlComlaintA.setCurrentTab(position);
             }
 
             @Override
@@ -91,5 +89,4 @@ public class My_Doctor extends Populace_Activity {
             }
         });
     }
-
 }

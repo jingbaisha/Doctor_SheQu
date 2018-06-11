@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y160"
+        android:layout_height="@dimen/y235"
         android:background="@color/blue_add"
         android:gravity="center">
 
@@ -24,6 +24,7 @@
             <com.fanwang.demo_doctor_community.custom.XCRoundImageView
                 android:layout_width="@dimen/y140"
                 android:layout_height="@dimen/y140"
+                android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/x40"
                 android:src="@drawable/aa" />
 
@@ -47,9 +48,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/x40"
-                    android:layout_marginTop="@dimen/x20"
                     android:gravity="center"
-                    android:text="吴恩达"
+                    android:text="普通用户"
                     android:textColor="@color/userblack"
                     android:textSize="10.5sp" />
             </LinearLayout>
@@ -57,6 +57,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/but_upgrade"
             android:layout_width="@dimen/x105"
             android:layout_height="@dimen/y49"
             android:layout_alignParentRight="true"
@@ -66,6 +67,7 @@
             android:text="升级"
             android:textColor="@color/white"
             android:textSize="10.5sp" />
+
     </RelativeLayout>
 
     <LinearLayout
