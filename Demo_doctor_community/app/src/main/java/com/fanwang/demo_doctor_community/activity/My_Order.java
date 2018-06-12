@@ -34,6 +34,7 @@ public class My_Order extends Populace_Activity {
 
     private List<Fragment> fragmentList = new ArrayList<>();
     private String[] data = {"全部", "待付款", "待服务", "待评价", "已退款"};
+    private int[] data_a={0,1,2,3,4};
     private TitleBackFragment titleBackFragment;
 
     @Override
@@ -53,8 +54,8 @@ public class My_Order extends Populace_Activity {
 
     @Override
     public void initData() {
-        for (int i = 0; i < data.length; i++) {
-            fragmentList.add(new My_Order_Fragment_a().getParameter(data[i]));
+        for (int i = 0; i < data_a.length; i++) {
+            fragmentList.add(new My_Order_Fragment_a().getParameter(data_a[i]));
         }
         vpMyOrder.setAdapter(new MypagerAdapter(getSupportFragmentManager()));
         stlMyOrder.setViewPager(vpMyOrder);

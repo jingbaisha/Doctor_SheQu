@@ -187,7 +187,7 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
             //消息中心
             case R.id.linear_xiaoxi:
                 intent = new Intent(getContext(), My_Doctor.class);
-            //startActivity(intent);
+                //startActivity(intent);
                 break;
             //校园健康
             case R.id.linear_Campus_health:
