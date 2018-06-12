@@ -1,11 +1,13 @@
 package com.fanwang.demo_doctor_community.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.fanwang.demo_doctor_community.R;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by edison on 2018/6/1.
@@ -59,7 +62,14 @@ public class Signed_a_activity extends Populace_Activity {
         stlTabVp.setAdapter(new MyViewpager(getSupportFragmentManager()));
         stlTabSigned.setViewPager(stlTabVp);
     }
-
+    @OnClick(R.id.login_qianyue)
+    public void OnClickItem(View view){
+        switch (view.getId()){
+            case R.id.login_qianyue:
+                startActivity(new Intent(this,Qianyue.class));
+                break;
+        }
+    }
     public class MyViewpager extends FragmentPagerAdapter {
 
         public MyViewpager(FragmentManager fm) {
@@ -82,4 +92,5 @@ public class Signed_a_activity extends Populace_Activity {
             return data.length;
         }
     }
+
 }

@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 
 import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.activity.Complaint_a;
+import com.fanwang.demo_doctor_community.activity.Eat_Activity;
 import com.fanwang.demo_doctor_community.activity.Member_a;
 import com.fanwang.demo_doctor_community.activity.My_Order;
 import com.fanwang.demo_doctor_community.activity.My_serve_bao;
@@ -76,7 +77,7 @@ public class My_Fragment extends Popuplace_Fragment {
 
     }
 
-    @OnClick({R.id.my_indent_rl, R.id.my_serve_bao, R.id.xcr_touxiang, R.id.my_complaint_rl, R.id.my_problem,R.id.button_community_members})
+    @OnClick({R.id.my_indent_rl, R.id.my_serve_bao, R.id.xcr_touxiang, R.id.my_complaint_rl, R.id.my_problem, R.id.button_community_members, R.id.my_eat_medicine})
     public void OnItemsOnclick(View view) {
         switch (view.getId()) {
             case R.id.my_indent_rl:
@@ -102,6 +103,9 @@ public class My_Fragment extends Popuplace_Fragment {
                 break;
             case R.id.button_community_members:
                 startActivity(new Intent(getContext(), Member_a.class));
+                break;
+            case R.id.my_eat_medicine:
+                startActivity(new Intent(getContext(), Eat_Activity.class));
                 break;
         }
 

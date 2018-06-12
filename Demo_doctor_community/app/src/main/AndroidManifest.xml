@@ -112,6 +112,15 @@
         <activity android:name=".activity.Upgrade_Activity">
 
         </activity>
+        <activity android:name=".activity.Eat_Activity">
+
+        </activity>
+        <activity android:name=".activity.Qianyue">
+
+        </activity>
+        <activity android:name=".activity.My_Record">
+
+        </activity>
     </application>
 
 </manifest>

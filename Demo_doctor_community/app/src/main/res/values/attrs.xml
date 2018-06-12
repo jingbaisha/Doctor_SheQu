@@ -13,4 +13,20 @@
         <attr format="reference" name="starFill"/>
     </declare-styleable>
 
+    <declare-styleable name="buttonM">
+        <attr name="backColor" />
+        <attr name="backColorPress" />
+        <attr name="backGroundImage" />
+        <attr name="backGroundImagePress" />
+        <attr name="textColor" />
+        <attr name="textColorPress" />
+        <attr name="fillet" format="boolean" />
+        <attr name="radius" format="float" />
+        <attr name="shape">
+            <enum name="rectangle" value="0" />
+            <enum name="oval" value="1" />
+            <enum name="line" value="2" />
+            <enum name="ring" value="3" />
+        </attr>
+    </declare-styleable>
 </resources>

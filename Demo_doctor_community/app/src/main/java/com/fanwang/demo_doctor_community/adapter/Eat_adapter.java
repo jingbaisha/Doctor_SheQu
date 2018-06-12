@@ -10,33 +10,33 @@ import android.widget.TextView;
 import com.fanwang.demo_doctor_community.R;
 
 /**
- * Created by edison on 2018/6/6.
+ * Created by edison on 2018/6/12.
  */
 
-public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class Eat_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private LayoutInflater inflater;
-    private int[] data=new int[10];
+    private int[] data = new int[10];
 
-    public My_doctor_Adapter(Context context) {
+    public Eat_adapter(Context context) {
         this.context = context;
-        inflater=LayoutInflater.from(context);
+        inflater = LayoutInflater.from(context);
         for (int i = 0; i < data.length; i++) {
-            data[i]=1+i;
+            data[i] = 1 + i;
         }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.my_doctor_adpter, parent, false);
-        MyViewHolder holder=new MyViewHolder(view);
+        View view = inflater.inflate(R.layout.eat_adapter, parent, false);
+        MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        MyViewHolder viewHolder= (MyViewHolder) holder;
-        viewHolder.textView.setText(data[position]+"我");
+        MyViewHolder viewHolder = (MyViewHolder) holder;
+        viewHolder.textView.setText("08:"+"0"+data[position]);
     }
 
     @Override
@@ -44,11 +44,12 @@ public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return data.length;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+
         public MyViewHolder(View itemView) {
             super(itemView);
-            textView=itemView.findViewById(R.id.tv_duizhang);
+            textView = itemView.findViewById(R.id.tv_time);
         }
     }
 }

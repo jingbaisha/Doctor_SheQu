@@ -3,6 +3,7 @@ package com.fanwang.demo_doctor_community.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.adapter.Member_adapter;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
 
@@ -33,6 +35,8 @@ public class Member_a extends Populace_Activity {
     RecyclerView rcyMemberCenter;
 
     private TitleBackFragment titleBackFragment;
+    private Member_adapter adapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +44,6 @@ public class Member_a extends Populace_Activity {
         ButterKnife.bind(this);
         initView();
         initData();
-
     }
 
     @Override
@@ -51,14 +54,16 @@ public class Member_a extends Populace_Activity {
 
     @Override
     public void initData() {
-
+        adapter = new Member_adapter(this);
+        rcyMemberCenter.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rcyMemberCenter.setAdapter(adapter);
     }
 
     @OnClick({R.id.but_upgrade})
-    public void OnClickItems(View view){
-        switch (view.getId()){
+    public void OnClickItems(View view) {
+        switch (view.getId()) {
             case R.id.but_upgrade:
-                startActivity(new Intent(this,Upgrade_Activity.class));
+                startActivity(new Intent(this, Upgrade_Activity.class));
                 break;
         }
     }

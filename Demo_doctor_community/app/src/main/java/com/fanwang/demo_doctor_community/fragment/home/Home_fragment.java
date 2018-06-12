@@ -18,6 +18,7 @@ import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.activity.Health_promotion_Activity;
 import com.fanwang.demo_doctor_community.activity.My_Appointment;
 import com.fanwang.demo_doctor_community.activity.My_Doctor;
+import com.fanwang.demo_doctor_community.activity.My_Record;
 import com.fanwang.demo_doctor_community.activity.School_health;
 import com.fanwang.demo_doctor_community.activity.Signed_Activity;
 import com.fanwang.demo_doctor_community.adapter.Home_Lv;
@@ -80,6 +81,8 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
     LinearLayout linearCampusHealth;
     @BindView(R.id.iv_signed)
     ImageView ivSigned;
+    @BindView(R.id.iv_record)
+    ImageView iv_record;
 
     private BadgeView badgeView;
     private Home_Lv adapter;
@@ -155,7 +158,7 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
     }
 
     @OnClick({R.id.lin_jkxw, R.id.lin_lay_jkzs, R.id.iv_show_more, R.id.iv_home_saoyisao,
-            R.id.Linear_My_appointment, R.id.linear_xiaoxi, R.id.linear_Campus_health, R.id.iv_signed, R.id.iv_My_doctor})
+            R.id.Linear_My_appointment, R.id.linear_xiaoxi, R.id.linear_Campus_health, R.id.iv_signed, R.id.iv_My_doctor,R.id.iv_record})
     public void onClick(View v) {
         switch (v.getId()) {
             //健康新闻
@@ -203,6 +206,9 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
             case R.id.iv_My_doctor:
                 intent = new Intent(getContext(), My_Doctor.class);
                 startActivity(intent);
+                break;
+            case R.id.iv_record:
+                startActivity(new Intent(getContext(),My_Record.class));
                 break;
         }
 

@@ -92,7 +92,7 @@ public class Details_a extends Populace_Activity {
         };
 
         rcyServeA.setLayoutManager(layout1);
-        
+
         //添加自定义分割线
         DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         divider.setDrawable(ContextCompat.getDrawable(this, R.drawable.recyclerview_item_c));
@@ -110,15 +110,16 @@ public class Details_a extends Populace_Activity {
         lvDetails.setLayoutManager(layout2);
         lvDetails.setAdapter(adapter);
     }
-    @OnClick({R.id.linear_tv_message,R.id.button_xiadan})
-    public void Onclick(View view){
-        switch (view.getId()){
+
+    @OnClick({R.id.linear_tv_message, R.id.button_xiadan})
+    public void Onclick(View view) {
+        switch (view.getId()) {
             case R.id.linear_tv_message:
-                intent = new Intent(Details_a.this,Leave_Massage.class);
+                intent = new Intent(Details_a.this, Leave_Massage.class);
                 startActivity(intent);
                 break;
             case R.id.button_xiadan:
-                intent = new Intent(Details_a.this,Down_order.class);
+                intent = new Intent(Details_a.this, Down_order.class);
                 startActivity(intent);
                 break;
         }

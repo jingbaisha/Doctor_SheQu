@@ -10,15 +10,14 @@ import android.widget.TextView;
 import com.fanwang.demo_doctor_community.R;
 
 /**
- * Created by edison on 2018/6/6.
+ * Created by edison on 2018/6/12.
  */
 
-public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class Qianyue_item_a extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private Context context;
     private LayoutInflater inflater;
     private int[] data=new int[10];
-
-    public My_doctor_Adapter(Context context) {
+    public Qianyue_item_a(Context context) {
         this.context = context;
         inflater=LayoutInflater.from(context);
         for (int i = 0; i < data.length; i++) {
@@ -28,15 +27,15 @@ public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.my_doctor_adpter, parent, false);
-        MyViewHolder holder=new MyViewHolder(view);
-        return holder;
+        View view = inflater.inflate(R.layout.qianyue_item_a, parent, false);
+        return new MyViewHoler_aa(view);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        MyViewHolder viewHolder= (MyViewHolder) holder;
-        viewHolder.textView.setText(data[position]+"我");
+
+        MyViewHoler_aa holer_aa= (MyViewHoler_aa) holder;
+        holer_aa.textView.setText(data[position]+"许三");
     }
 
     @Override
@@ -44,11 +43,12 @@ public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return data.length;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHoler_aa extends RecyclerView.ViewHolder{
         TextView textView;
-        public MyViewHolder(View itemView) {
+
+        public MyViewHoler_aa(View itemView) {
             super(itemView);
-            textView=itemView.findViewById(R.id.tv_duizhang);
+            textView=itemView.findViewById(R.id.tv_qianyue_a);
         }
     }
 }
