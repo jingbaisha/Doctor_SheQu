@@ -20,7 +20,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
+                android:id="@+id/lin_img_one"
+                android:orientation="vertical"
                 android:layout_marginTop="@dimen/y200"
                 android:layout_marginLeft="@dimen/x80"
                 android:layout_marginRight="@dimen/x80"
@@ -40,6 +43,7 @@
                     android:layout_height="wrap_content">
 
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/bt_a"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -57,6 +61,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/bt_b"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -76,6 +81,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/bt_c"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -93,6 +99,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/bt_d"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -114,7 +121,9 @@
                 android:background="@drawable/line_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <com.fanwang.demo_doctor_community.custom.ButtonM
+                android:id="@+id/but_e"
                 android:gravity="center"
                 android:layout_width="@dimen/x116"
                 android:layout_height="@dimen/y116"
@@ -128,7 +137,6 @@
                 landptf:textColor="@color/userblack"
                 landptf:textColorPress="#696969"/>
 
-
             <LinearLayout
                 android:layout_marginTop="@dimen/y500"
                 android:layout_width="match_parent"
@@ -141,6 +149,7 @@
                     android:layout_height="wrap_content">
 
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/but_aa"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -158,6 +167,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/but_bb"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -176,6 +186,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/but_cc"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"
@@ -194,6 +205,7 @@
                     android:layout_height="wrap_content">
 
                     <com.fanwang.demo_doctor_community.custom.ButtonM
+                        android:id="@+id/but_dd"
                         android:gravity="center"
                         android:layout_width="@dimen/x116"
                         android:layout_height="@dimen/y116"

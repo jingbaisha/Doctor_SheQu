@@ -207,6 +207,7 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
                 intent = new Intent(getContext(), My_Doctor.class);
                 startActivity(intent);
                 break;
+                //我的家庭
             case R.id.iv_record:
                 startActivity(new Intent(getContext(),My_Record.class));
                 break;

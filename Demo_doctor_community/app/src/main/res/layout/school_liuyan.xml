@@ -47,6 +47,7 @@
     </RelativeLayout>
 
         <EditText
+            android:gravity="top"
             android:background="@drawable/yuan_white"
             android:layout_marginLeft="@dimen/x24"
             android:layout_marginRight="@dimen/x24"

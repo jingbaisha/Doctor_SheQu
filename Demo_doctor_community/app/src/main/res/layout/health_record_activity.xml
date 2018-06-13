@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"/>
 
     <RelativeLayout
+        android:id="@+id/rl_one"
         android:gravity="center"
         android:background="@color/white"
         android:layout_marginTop="@dimen/x20"
@@ -52,6 +53,7 @@
         android:layout_height="@dimen/y2"/>
 
     <RelativeLayout
+        android:id="@+id/rl_jiben"
         android:gravity="center"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -90,6 +92,7 @@
         android:layout_height="@dimen/y2"/>
 
     <RelativeLayout
+        android:id="@+id/rl_health"
         android:gravity="center"
         android:background="@color/white"
         android:layout_width="match_parent"

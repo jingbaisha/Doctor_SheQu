@@ -121,6 +121,20 @@
         <activity android:name=".activity.My_Record">
 
         </activity>
+        <activity android:name=".activity.Health_Record_Activity">
+
+        </activity>
+        <activity android:name=".activity.Health_Record_Activity_a" android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".activity.Health_bianji"  android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
+
+        </activity>
+
+        <activity android:name=".activity.Edit_the_health"  android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
+
+        </activity>
+
     </application>
 
 </manifest>
