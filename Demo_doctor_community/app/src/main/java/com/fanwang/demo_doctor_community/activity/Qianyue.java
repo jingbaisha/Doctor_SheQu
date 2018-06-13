@@ -5,8 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
@@ -16,20 +17,25 @@ import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by edison on 2018/6/12.
  */
 
 public class Qianyue extends Populace_Activity {
+
     @BindView(R.id.title_fragment_content)
     LinearLayout titleFragmentContent;
     @BindView(R.id.tv_time)
     TextView tvTime;
     @BindView(R.id.tv_time_but)
-    RadioButton tvTimeBut;
+    Button tvTimeBut;
+    @BindView(R.id.tv_time_but_a)
+    Button tvTimeButA;
     @BindView(R.id.rcy_apponitment_a)
     RecyclerView rcyApponitmentA;
+
     private Qianyue_adapter adapter;
     private TitleBackFragment titleBackFragment;
 
@@ -50,14 +56,47 @@ public class Qianyue extends Populace_Activity {
 
     @Override
     public void initData() {
-        GridLayoutManager layout1 = new GridLayoutManager(this, 1) {
+    /*    LinearLayout layout1 = new GridLayoutManager(this, 1) {
             @Override
             public boolean canScrollVertically() {
                 return false;
             }
+        };*/
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false){
+            @Override
+            public boolean canScrollVertically() {
+                return super.canScrollVertically();
+            }
         };
         adapter = new Qianyue_adapter(this);
-        rcyApponitmentA.setLayoutManager(layout1);
+        rcyApponitmentA.setLayoutManager(linearLayoutManager);
         rcyApponitmentA.setAdapter(adapter);
+        tvTimeBut.setSelected(true);
+    }
+
+    @OnClick({R.id.tv_time_but,R.id.tv_time_but_a})
+    public void OnclicItems(View view){
+        switch (view.getId()){
+            case R.id.tv_time_but:
+                init(1);
+                break;
+            case R.id.tv_time_but_a:
+                init(2);
+                break;
+        }
+    }
+
+    private void init(int i) {
+        if (i==1){
+            tvTimeBut.setSelected(true);
+        }else {
+            tvTimeBut.setSelected(false);
+        }
+        if (i==2){
+            tvTimeButA.setSelected(true);
+        }else {
+            tvTimeButA.setSelected(false);
+        }
     }
 }

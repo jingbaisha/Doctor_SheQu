@@ -5,11 +5,11 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y175"
         android:layout_marginLeft="@dimen/x8"
-        android:background="@drawable/yuan_blue_a"
+        android:background="@drawable/yuan_huise_a"
+        android:gravity="center"
         android:orientation="vertical">
 
         <com.fanwang.demo_doctor_community.custom.XCRoundImageView

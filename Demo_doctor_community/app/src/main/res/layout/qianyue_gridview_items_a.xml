@@ -6,13 +6,14 @@
 
     <TextView
         android:id="@+id/tv_qianyue_aa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/x166"
+        android:layout_height="@dimen/y60"
         android:layout_margin="4dp"
-        android:background="@drawable/yuan_white"
+        android:textSize="10.5sp"
+        android:background="@drawable/yuan_huise_a"
         android:gravity="center"
         android:padding="5dp"
         android:text="1月29日上午"
-        android:textColor="@color/red" />
+        android:textColor="@color/add_red_a" />
 
 </LinearLayout>

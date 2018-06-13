@@ -15,6 +15,7 @@ import com.fanwang.demo_doctor_community.R;
  */
 
 public class Qianyue_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
     private Context context;
     private LayoutInflater inflater;
     //自主选择

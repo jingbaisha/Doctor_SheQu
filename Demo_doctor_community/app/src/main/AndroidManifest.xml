@@ -134,7 +134,9 @@
         <activity android:name=".activity.Edit_the_health"  android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
 
         </activity>
+        <activity android:name=".activity.Health_Record_Activity_b">
 
+        </activity>
     </application>
 
 </manifest>

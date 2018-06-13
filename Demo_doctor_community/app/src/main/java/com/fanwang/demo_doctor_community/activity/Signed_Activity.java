@@ -63,7 +63,6 @@ public class Signed_Activity extends Populace_Activity {
         divider.setDrawable(ContextCompat.getDrawable(this, R.drawable.recyclerview_item));
         lvSigned.addItemDecoration(divider);
 
-
         adapter = new Serve_Adapter(this);
         lvSigned.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         lvSigned.setAdapter(adapter);
@@ -74,5 +73,6 @@ public class Signed_Activity extends Populace_Activity {
                 startActivity(intent);
             }
         });
+
     }
 }

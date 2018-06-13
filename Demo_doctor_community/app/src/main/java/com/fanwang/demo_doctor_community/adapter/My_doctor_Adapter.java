@@ -13,30 +13,47 @@ import com.fanwang.demo_doctor_community.R;
  * Created by edison on 2018/6/6.
  */
 
-public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private LayoutInflater inflater;
-    private int[] data=new int[10];
+    private int[] data = new int[10];
+
+    public OnclickItems onclickItems;
+
+    public interface OnclickItems {
+        void SetOnclick(View view, int position);
+    }
+
+    public void SetOnclick_Items(OnclickItems onclickItems) {
+        this.onclickItems=onclickItems;
+    }
 
     public My_doctor_Adapter(Context context) {
         this.context = context;
-        inflater=LayoutInflater.from(context);
+        inflater = LayoutInflater.from(context);
         for (int i = 0; i < data.length; i++) {
-            data[i]=1+i;
+            data[i] = 1 + i;
         }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.my_doctor_adpter, parent, false);
-        MyViewHolder holder=new MyViewHolder(view);
+        MyViewHolder holder = new MyViewHolder(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onclickItems.SetOnclick(v, (Integer) v.getTag());
+            }
+        });
         return holder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        MyViewHolder viewHolder= (MyViewHolder) holder;
-        viewHolder.textView.setText(data[position]+"我");
+        MyViewHolder viewHolder = (MyViewHolder) holder;
+        viewHolder.textView.setText(data[position] + "我");
+        viewHolder.itemView.setTag(position);
     }
 
     @Override
@@ -44,11 +61,12 @@ public class My_doctor_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return data.length;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+
         public MyViewHolder(View itemView) {
             super(itemView);
-            textView=itemView.findViewById(R.id.tv_duizhang);
+            textView = itemView.findViewById(R.id.tv_duizhang);
         }
     }
 }

@@ -21,7 +21,6 @@
             android:layout_marginLeft="@dimen/x24"
             android:layout_marginRight="@dimen/x24"
             android:layout_marginTop="@dimen/x24"
-
             android:background="@drawable/yuan_white_b">
 
             <TextView
@@ -38,7 +37,13 @@
                 android:layout_centerInParent="true"
                 android:layout_centerVertical="true"
                 android:text="孕检服务" />
+
         </RelativeLayout>
+
+        <RadioGroup
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -56,21 +61,53 @@
                 android:layout_marginLeft="@dimen/x29"
                 android:text="上午" />
 
-            <RadioButton
+            <Button
                 android:id="@+id/tv_time_but"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@drawable/radio_button_onclik"
+                android:layout_width="@dimen/x32"
+                android:layout_height="@dimen/x33"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/x29" />
+                android:layout_marginRight="@dimen/x30" />
+
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y85"
+            android:layout_marginTop="@dimen/y5">
+
+            <TextView
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="自主选择" />
+
+            <Button
+                android:id="@+id/tv_time_but_a"
+                android:button="@null"
+                android:background="@drawable/radio_button_onclik"
+                android:layout_width="@dimen/x32"
+                android:layout_height="@dimen/x33"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x30" />
+
+        </RelativeLayout>
+
+        </RadioGroup>
+
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/x24"
             android:layout_marginRight="@dimen/x24"
-            android:layout_marginTop="@dimen/y5"
             android:background="@color/white">
 
             <android.support.v7.widget.RecyclerView
@@ -79,6 +116,7 @@
                 android:layout_height="match_parent" />
 
         </LinearLayout>
+
     </LinearLayout>
 
     <Button
