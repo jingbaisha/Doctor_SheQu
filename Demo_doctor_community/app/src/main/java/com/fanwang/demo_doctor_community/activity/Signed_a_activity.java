@@ -62,14 +62,16 @@ public class Signed_a_activity extends Populace_Activity {
         stlTabVp.setAdapter(new MyViewpager(getSupportFragmentManager()));
         stlTabSigned.setViewPager(stlTabVp);
     }
+
     @OnClick(R.id.login_qianyue)
-    public void OnClickItem(View view){
-        switch (view.getId()){
+    public void OnClickItem(View view) {
+        switch (view.getId()) {
             case R.id.login_qianyue:
-                startActivity(new Intent(this,Qianyue.class));
+                startActivity(new Intent(this, Qianyue.class));
                 break;
         }
     }
+
     public class MyViewpager extends FragmentPagerAdapter {
 
         public MyViewpager(FragmentManager fm) {

@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.activity.Complaint_a;
 import com.fanwang.demo_doctor_community.activity.Eat_Activity;
+import com.fanwang.demo_doctor_community.activity.Health_Record_Activity_b;
 import com.fanwang.demo_doctor_community.activity.Member_a;
 import com.fanwang.demo_doctor_community.activity.My_Order;
 import com.fanwang.demo_doctor_community.activity.My_serve_bao;
@@ -62,7 +64,10 @@ public class My_Fragment extends Popuplace_Fragment {
     RelativeLayout myProblemRl;
     @BindView(R.id.button_community_members)
     Button buttonCommunityMembers;
+    @BindView(R.id.tv_my_name)
+    TextView tvMyName;
     private Intent intent;
+
 
     @Nullable
     @Override
@@ -77,7 +82,8 @@ public class My_Fragment extends Popuplace_Fragment {
 
     }
 
-    @OnClick({R.id.my_indent_rl, R.id.my_serve_bao, R.id.xcr_touxiang, R.id.my_complaint_rl, R.id.my_problem, R.id.button_community_members, R.id.my_eat_medicine})
+    @OnClick({R.id.my_indent_rl, R.id.my_serve_bao, R.id.xcr_touxiang,
+            R.id.my_complaint_rl, R.id.my_problem, R.id.button_community_members, R.id.my_eat_medicine,R.id.tv_my_name})
     public void OnItemsOnclick(View view) {
         switch (view.getId()) {
             case R.id.my_indent_rl:
@@ -107,6 +113,8 @@ public class My_Fragment extends Popuplace_Fragment {
             case R.id.my_eat_medicine:
                 startActivity(new Intent(getContext(), Eat_Activity.class));
                 break;
+            case R.id.tv_my_name:
+                startActivity(new Intent(getContext(), Health_Record_Activity_b.class));
         }
 
     }

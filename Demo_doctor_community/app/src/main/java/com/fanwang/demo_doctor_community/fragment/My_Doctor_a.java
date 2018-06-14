@@ -1,5 +1,6 @@
 package com.fanwang.demo_doctor_community.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.activity.Details_a;
+import com.fanwang.demo_doctor_community.activity.Doctor_details;
 import com.fanwang.demo_doctor_community.adapter.My_doctor_Adapter;
 import com.fanwang.demo_doctor_community.commonality.Popuplace_Fragment;
 
@@ -46,8 +49,14 @@ public class My_Doctor_a extends Popuplace_Fragment {
         rcyMyDoctor.addItemDecoration(divider);
 
         adapter = new My_doctor_Adapter(getContext());
-        rcyMyDoctor.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        rcyMyDoctor.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         rcyMyDoctor.setAdapter(adapter);
+        adapter.SetOnclick_Items(new My_doctor_Adapter.OnclickItems() {
+            @Override
+            public void SetOnclick(View view, int position) {
+                startActivity(new Intent(getContext(), Doctor_details.class));
+            }
+        });
     }
 
     private void initView() {

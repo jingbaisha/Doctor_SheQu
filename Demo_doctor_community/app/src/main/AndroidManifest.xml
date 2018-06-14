@@ -134,7 +134,9 @@
         <activity android:name=".activity.Edit_the_health"  android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan">
 
         </activity>
+        <activity android:name=".activity.Health_Record_Activity_b">
 
+<<<<<<< HEAD
         <activity android:name=".activity.Carousel_Items">
 
         </activity>
@@ -143,6 +145,8 @@
         </activity>
         <activity android:name=".activity.Infomation_Items">
 
+=======
+>>>>>>> a68d9d6d9f20d205a26bc8446d8ba029c8abf9a4
         </activity>
     </application>
 

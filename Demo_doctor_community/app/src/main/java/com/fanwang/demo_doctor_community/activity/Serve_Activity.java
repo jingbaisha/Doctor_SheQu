@@ -94,7 +94,7 @@ public class Serve_Activity extends Populace_Activity {
     ArrayList<CustomTabEntity> list = new ArrayList<>();
     private Serve_Adapter adapter;
     private Intent intent;
-    private String tx="";
+    private String tx = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -118,7 +118,7 @@ public class Serve_Activity extends Populace_Activity {
             switch (msg.what) {
                 case MSG_LOAD_DATA:
                     if (thread == null) {   //如果已创建就不再重新创建子线程了
-                        Toast.makeText(Serve_Activity.this, "Begin Parse Data", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Serve_Activity.this, "Begin Parse Data", Toast.LENGTH_SHORT).show();
                         thread = new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -131,12 +131,12 @@ public class Serve_Activity extends Populace_Activity {
                     break;
 
                 case MSG_LOAD_SUCCESS:
-                    Toast.makeText(Serve_Activity.this, "Parse Succeed", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(Serve_Activity.this, "Parse Succeed", Toast.LENGTH_SHORT).show();
                     isLoaded = true;
                     break;
 
                 case MSG_LOAD_FAILED:
-                    Toast.makeText(Serve_Activity.this, "Parse Failed", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(Serve_Activity.this, "Parse Failed", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -236,11 +236,11 @@ public class Serve_Activity extends Populace_Activity {
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
                 //返回的分别是三个级别的选中位置
-                 tx =    options1Items.get(options1).getPickerViewText() +
+                tx = options1Items.get(options1).getPickerViewText() +
                         options2Items.get(options1).get(options2) +
                         options3Items.get(options1).get(options2).get(options3);
 
-                Toast.makeText(Serve_Activity.this, "" + tx, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Serve_Activity.this, "" + tx, Toast.LENGTH_SHORT).show();
                 tvSsq.setText(tx);
             }
         })

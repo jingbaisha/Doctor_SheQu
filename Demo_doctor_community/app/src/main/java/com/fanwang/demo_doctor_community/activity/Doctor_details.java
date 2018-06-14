@@ -5,13 +5,18 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.adapter.Comment_detaisl_Adapter;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
 import com.fanwang.demo_doctor_community.custom.StarBar;
@@ -44,10 +49,13 @@ public class Doctor_details extends Populace_Activity {
     Button button;
     @BindView(R.id.doctor_vp)
     ViewPager doctorVp;
+    @BindView(R.id.lv_details)
+    RecyclerView lvDetails;
     private TitleBackFragment titleBackFragment;
     @BindView(R.id.tl_doctor)
     TabLayout mTab;
     private String[] data = {"基本信息", "个人简历"};
+    private Comment_detaisl_Adapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +76,23 @@ public class Doctor_details extends Populace_Activity {
     public void initData() {
         starDoctor.setStarMark(3.6f);
         addTab(mTab);
+
+        //添加自定义分割线
+        DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        divider.setDrawable(ContextCompat.getDrawable(this, R.drawable.recyclerview_item_c));
+        lvDetails.addItemDecoration(divider);
+
+        //评论
+        adapter = new Comment_detaisl_Adapter(this);
+        LinearLayoutManager layout2 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+
+        lvDetails.setLayoutManager(layout2);
+        lvDetails.setAdapter(adapter);
     }
 
     private void addTab(TabLayout mTab) {
@@ -76,29 +101,30 @@ public class Doctor_details extends Populace_Activity {
             tab.setText(data[i]);
             mTab.addTab(tab);
         }
-        doctorVp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
-           @Override
-           public Fragment getItem(int position) {
-               switch (position){
-                   case 0:
-                       return new Basic_Fragment();
-                   default:
-                       return new My_message();
-               }
-           }
 
-           @Override
-           public int getCount() {
-               return 2;
-           }
+        doctorVp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                switch (position) {
+                    case 0:
+                        return new Basic_Fragment();
+                    default:
+                        return new My_message();
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 2;
+            }
 
             @Override
             public CharSequence getPageTitle(int position) {
-                switch (position){
+                switch (position) {
                     case 1:
                         return getString(R.string.mymessage);
-                        default:
-                            return getString(R.string.jibenxinxi);
+                    default:
+                        return getString(R.string.jibenxinxi);
                 }
             }
         });

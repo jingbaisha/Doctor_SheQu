@@ -33,7 +33,6 @@ public class Qianyue_item_a extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
         MyViewHoler_aa holer_aa= (MyViewHoler_aa) holder;
         holer_aa.textView.setText(data[position]+"许三");
     }

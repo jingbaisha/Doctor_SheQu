@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.custom.StarBar;
 
 /**
  * Created by edison on 2018/5/30.
@@ -50,6 +51,7 @@ public class Serve_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         Viewholder viewholder= (Viewholder) holder;
         viewholder.textView.setText(data[position]);
         viewholder.itemView.setTag(position);
+        viewholder.starBar.setStarMark(3.6f);
     }
 
     @Override
@@ -59,9 +61,12 @@ public class Serve_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     class Viewholder extends RecyclerView.ViewHolder{
         TextView textView;
+        StarBar starBar;
+
         public Viewholder(View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.tv_name);
+            starBar=itemView.findViewById(R.id.star_doctor);
         }
     }
 }
