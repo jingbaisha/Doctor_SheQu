@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.activity.Apponitment_details;

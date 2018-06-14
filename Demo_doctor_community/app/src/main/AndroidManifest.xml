@@ -135,6 +135,15 @@
 
         </activity>
 
+        <activity android:name=".activity.Carousel_Items">
+
+        </activity>
+        <activity android:name=".activity.Information" android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".activity.Infomation_Items">
+
+        </activity>
     </application>
 
 </manifest>

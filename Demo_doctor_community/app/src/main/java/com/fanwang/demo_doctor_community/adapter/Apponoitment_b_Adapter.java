@@ -17,6 +17,14 @@ public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
     private Context context;
     private LayoutInflater inflater;
     private int[] data = new int[10];
+    private Apponoitment_a_Adapter.Onclick_Items onclick_items;
+
+    public interface Onclick_Items{
+        void OnItems_Onclick(View view,int position);
+    }
+    public void SteOnClick_Items(Apponoitment_a_Adapter.Onclick_Items onclick_items){
+        this.onclick_items=onclick_items;
+    }
 
     public Apponoitment_b_Adapter(Context context) {
         this.context = context;
@@ -24,19 +32,27 @@ public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
             data[i] = 1 + i;
         }
         inflater = LayoutInflater.from(context);
+
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.apponitment_list_b, parent, false);
+        View view = inflater.inflate(R.layout.apponitment_aa, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onclick_items.OnItems_Onclick(view, (Integer) view.getTag());
+            }
+        });
         return holder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder viewHolder = (MyViewHolder) holder;
-        viewHolder.textView.setText(data[position] + "广州");
+        viewHolder.textView.setText(data[position] + "号");
+        viewHolder.itemView.setTag(position);
     }
 
     @Override
@@ -49,7 +65,7 @@ public class Apponoitment_b_Adapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.tv_ren_a);
+            textView = itemView.findViewById(R.id.tv_doctor_hao);
         }
     }
 }

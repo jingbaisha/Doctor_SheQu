@@ -44,7 +44,6 @@ public class XCRoundImageView extends ImageView {
         //因为是圆形图片，所以应该让宽高保持一致
         int size = Math.min(getMeasuredWidth(), getMeasuredHeight());
         mRadius = size / 2;
-
         setMeasuredDimension(size, size);
     }
 
@@ -84,5 +83,5 @@ public class XCRoundImageView extends ImageView {
         drawable.setBounds(0, 0, w, h);
         drawable.draw(canvas);
         return bitmap;
-    }
+     }
     }

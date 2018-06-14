@@ -1,5 +1,6 @@
 package com.fanwang.demo_doctor_community.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.activity.Apponitment_details;
+import com.fanwang.demo_doctor_community.adapter.Apponoitment_a_Adapter;
 import com.fanwang.demo_doctor_community.adapter.Apponoitment_b_Adapter;
 import com.fanwang.demo_doctor_community.commonality.Popuplace_Fragment;
 
@@ -47,6 +50,12 @@ public class Appointment_b extends Popuplace_Fragment {
         adapter = new Apponoitment_b_Adapter(getContext());
         rcvYuyuedoctor.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         rcvYuyuedoctor.setAdapter(adapter);
+        adapter.SteOnClick_Items(new Apponoitment_a_Adapter.Onclick_Items() {
+            @Override
+            public void OnItems_Onclick(View view, int position) {
+                startActivity(new Intent(getContext(), Apponitment_details.class));
+            }
+        });
     }
 
     private void initView() {

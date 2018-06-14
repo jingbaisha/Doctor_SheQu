@@ -15,7 +15,9 @@ import android.widget.LinearLayout;
 
 import com.example.zxing_google.android.CaptureActivity;
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.activity.Carousel_Items;
 import com.fanwang.demo_doctor_community.activity.Health_promotion_Activity;
+import com.fanwang.demo_doctor_community.activity.Information;
 import com.fanwang.demo_doctor_community.activity.My_Appointment;
 import com.fanwang.demo_doctor_community.activity.My_Doctor;
 import com.fanwang.demo_doctor_community.activity.My_Record;
@@ -42,7 +44,7 @@ import static android.support.v4.content.PermissionChecker.PERMISSION_GRANTED;
  * Created by edison on 2018/5/11.
  */
 
-public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollListener, OnChildScrollListener {
+public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollListener, OnChildScrollListener, BGABanner.Delegate {
 
     private static final String TAG = "Home_fragment";
     Unbinder unbinder;
@@ -116,6 +118,7 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
         recyHome.setAdapter(adapter);
         sidegrouplayouut.setOnGroupScrollListener(this);
         recyHome.setOnChildScrollListener(this);
+        mBgaBanner.setDelegate(this);
     }
 
     private void initView() {
@@ -158,7 +161,9 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
     }
 
     @OnClick({R.id.lin_jkxw, R.id.lin_lay_jkzs, R.id.iv_show_more, R.id.iv_home_saoyisao,
-            R.id.Linear_My_appointment, R.id.linear_xiaoxi, R.id.linear_Campus_health, R.id.iv_signed, R.id.iv_My_doctor,R.id.iv_record})
+            R.id.Linear_My_appointment, R.id.linear_xiaoxi, R.id.linear_Campus_health,
+            R.id.iv_signed, R.id.iv_My_doctor,R.id.iv_record})
+
     public void onClick(View v) {
         switch (v.getId()) {
             //健康新闻
@@ -189,8 +194,8 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
                 break;
             //消息中心
             case R.id.linear_xiaoxi:
-                intent = new Intent(getContext(), My_Doctor.class);
-                //startActivity(intent);
+                intent = new Intent(getContext(), Information.class);
+                startActivity(intent);
                 break;
             //校园健康
             case R.id.linear_Campus_health:
@@ -254,5 +259,8 @@ public class Home_fragment extends Popuplace_Fragment implements OnGroupScrollLi
         }
     }
 
-
+    @Override
+    public void onBannerItemClick(BGABanner banner, View itemView, @Nullable Object model, int position) {
+        startActivity(new Intent(getContext(),Carousel_Items.class));
+    }
 }

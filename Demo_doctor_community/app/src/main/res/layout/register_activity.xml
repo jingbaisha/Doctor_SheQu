@@ -13,7 +13,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y200" />
+        android:layout_height="@dimen/y140" />
 
     <EditText
         android:id="@+id/login_username"
@@ -39,6 +39,15 @@
         android:text="请检查输入手机号"
         android:textColor="@color/red"
         android:visibility="gone" />
+    <TextView
+        android:text="请输入手机号码"
+        android:textSize="10.5sp"
+        android:visibility="gone"
+        android:textColor="@color/add_red_a"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,7 +105,15 @@
         android:maxLength="24"
         android:padding="15dp"
         android:textSize="14sp" />
-
+    <TextView
+        android:text="两次密码不一样"
+        android:textSize="10.5sp"
+        android:visibility="gone"
+        android:textColor="@color/add_red_a"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/y80"
@@ -110,7 +127,7 @@
         android:layout_marginRight="@dimen/x40"
         android:background="@drawable/yuan_green"
         android:gravity="center"
-        android:text="@string/login_btn"
+        android:text="@string/zhuce"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
