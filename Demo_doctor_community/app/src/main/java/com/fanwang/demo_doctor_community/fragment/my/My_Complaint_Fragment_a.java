@@ -1,4 +1,4 @@
-package com.fanwang.demo_doctor_community.fragment;
+package com.fanwang.demo_doctor_community.fragment.my;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.fanwang.demo_doctor_community.R;
-import com.fanwang.demo_doctor_community.activity.Order_Details_a;
+import com.fanwang.demo_doctor_community.activity.My_Complaint_Item;
+import com.fanwang.demo_doctor_community.adapter.My_complaint_Adapter;
 import com.fanwang.demo_doctor_community.adapter.My_order_fragment;
 
 import butterknife.BindView;
@@ -24,17 +24,17 @@ import butterknife.Unbinder;
 
 /**
  * Created by edison on 2018/5/31.
+ * 投诉的Fragment
  */
 
-public class My_Order_Fragment_a extends Fragment {
+public class My_Complaint_Fragment_a extends Fragment {
     Unbinder unbinder;
     @BindView(R.id.tv_my_order)
     RecyclerView tvMyOrder;
-    private int title;
-    private My_order_fragment adapter;
+    private String title;
 
-    public My_Order_Fragment_a getParameter(int title) {
-        My_Order_Fragment_a data = new My_Order_Fragment_a();
+    public My_Complaint_Fragment_a getParameter(String title) {
+        My_Complaint_Fragment_a data = new My_Complaint_Fragment_a();
         data.title = title;
         return data;
     }
@@ -54,19 +54,13 @@ public class My_Order_Fragment_a extends Fragment {
         divider.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.recyclerview_item_c));
         tvMyOrder.addItemDecoration(divider);
 
-        adapter = new My_order_fragment(getContext(), title);
+        My_complaint_Adapter adapter=new My_complaint_Adapter(getContext(),title);
         tvMyOrder.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         tvMyOrder.setAdapter(adapter);
-        adapter.SetOnclick_Items(new My_order_fragment.OnclickItems() {
+        adapter.SetOnclick_Items(new My_complaint_Adapter.OnclickItems() {
             @Override
             public void SetOnclick(View view, int position) {
-                startActivity(new Intent(getContext(), Order_Details_a.class));
-            }
-        });
-        adapter.SetOnclick_Items_A(new My_order_fragment.OnclickItems_Items() {
-            @Override
-            public void SetOnclick_Items(View view, int position) {
-                Toast.makeText(getContext(), "你点击了我", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), My_Complaint_Item.class));
             }
         });
     }

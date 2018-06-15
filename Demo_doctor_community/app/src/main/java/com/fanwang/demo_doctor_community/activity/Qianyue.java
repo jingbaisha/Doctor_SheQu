@@ -1,5 +1,6 @@
 package com.fanwang.demo_doctor_community.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
@@ -35,6 +36,8 @@ public class Qianyue extends Populace_Activity {
     Button tvTimeButA;
     @BindView(R.id.rcy_apponitment_a)
     RecyclerView rcyApponitmentA;
+    @BindView(R.id.but_queren)
+    Button button_queren;
 
     private Qianyue_adapter adapter;
     private TitleBackFragment titleBackFragment;
@@ -63,7 +66,7 @@ public class Qianyue extends Populace_Activity {
             }
         };*/
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false) {
             @Override
             public boolean canScrollVertically() {
                 return super.canScrollVertically();
@@ -75,27 +78,31 @@ public class Qianyue extends Populace_Activity {
         tvTimeBut.setSelected(true);
     }
 
-    @OnClick({R.id.tv_time_but,R.id.tv_time_but_a})
-    public void OnclicItems(View view){
-        switch (view.getId()){
+    @OnClick({R.id.tv_time_but, R.id.tv_time_but_a, R.id.but_queren})
+    public void OnclicItems(View view) {
+        switch (view.getId()) {
             case R.id.tv_time_but:
                 init(1);
                 break;
             case R.id.tv_time_but_a:
                 init(2);
                 break;
+            case R.id.but_queren:
+                startActivity(new Intent(Qianyue.this, Apponitment_details.class));
+                finish();
+                break;
         }
     }
 
     private void init(int i) {
-        if (i==1){
+        if (i == 1) {
             tvTimeBut.setSelected(true);
-        }else {
+        } else {
             tvTimeBut.setSelected(false);
         }
-        if (i==2){
+        if (i == 2) {
             tvTimeButA.setSelected(true);
-        }else {
+        } else {
             tvTimeButA.setSelected(false);
         }
     }

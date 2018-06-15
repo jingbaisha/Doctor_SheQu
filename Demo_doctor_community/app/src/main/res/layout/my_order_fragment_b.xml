@@ -49,30 +49,41 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="孕妇服务包"
+                            android:textSize="13.5sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="服务包价格:800元"
+                            android:textSize="10.5sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
                     <TextView
-                        android:text="孕妇服务包"
-                        android:textSize="13.5sp"
-                        android:layout_width="wrap_content"
+                        android:text="广州市妇幼院"
+                        android:textSize="10sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:text="孕妇服务包"
-                        android:textSize="10.5sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_marginTop="@dimen/y6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:text="服务时间  "
+                            android:text="截止时间:"
                             android:textSize="10.5sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView
                             android:textColor="@color/red"
                             android:textSize="10.5sp"
-                            android:text="2017-05-20至2018-03-013"
+                            android:text="2018-03-013"
                             android:layout_marginLeft="@dimen/x28"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -149,6 +160,7 @@
                 android:text="剩余8次" />
 
             <TextView
+                android:id="@+id/tv_yuyue_one"
                 android:background="@drawable/yuan_green"
                 android:layout_alignParentRight="true"
                 android:text="预约"
@@ -183,6 +195,7 @@
                 android:text="剩余8次" />
 
             <TextView
+                android:id="@+id/tv_yuyue_two"
                 android:background="@drawable/yuan_green"
                 android:layout_alignParentRight="true"
                 android:text="预约"
@@ -217,6 +230,7 @@
                 android:text="剩余8次" />
 
             <TextView
+                android:id="@+id/tv_yuyue_three"
                 android:background="@drawable/yuan_green"
                 android:layout_alignParentRight="true"
                 android:text="预约"

@@ -1,4 +1,4 @@
-package com.fanwang.demo_doctor_community.fragment;
+package com.fanwang.demo_doctor_community.fragment.my;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +12,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.fanwang.demo_doctor_community.R;
-import com.fanwang.demo_doctor_community.activity.Order_Details_a;
-import com.fanwang.demo_doctor_community.adapter.My_order_fragment;
+import com.fanwang.demo_doctor_community.activity.Serve_Bao_Items;
+import com.fanwang.demo_doctor_community.adapter.My_order_adapter_one;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,17 +23,18 @@ import butterknife.Unbinder;
 
 /**
  * Created by edison on 2018/5/31.
+ * 我的服务包Fragment
  */
 
-public class My_Order_Fragment_a extends Fragment {
+public class My_Order_Fragment_one extends Fragment {
     Unbinder unbinder;
     @BindView(R.id.tv_my_order)
     RecyclerView tvMyOrder;
-    private int title;
-    private My_order_fragment adapter;
+    private String title;
+    private My_order_adapter_one adapter;
 
-    public My_Order_Fragment_a getParameter(int title) {
-        My_Order_Fragment_a data = new My_Order_Fragment_a();
+    public My_Order_Fragment_one getParameter(String title) {
+        My_Order_Fragment_one data = new My_Order_Fragment_one();
         data.title = title;
         return data;
     }
@@ -54,19 +54,21 @@ public class My_Order_Fragment_a extends Fragment {
         divider.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.recyclerview_item_c));
         tvMyOrder.addItemDecoration(divider);
 
-        adapter = new My_order_fragment(getContext(), title);
+        adapter = new My_order_adapter_one(getContext(), title);
         tvMyOrder.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         tvMyOrder.setAdapter(adapter);
-        adapter.SetOnclick_Items(new My_order_fragment.OnclickItems() {
+        adapter.SetOnclick_Items(new My_order_adapter_one.OnclickItems() {
             @Override
             public void SetOnclick(View view, int position) {
-                startActivity(new Intent(getContext(), Order_Details_a.class));
+                startActivity(new Intent(getContext(), Serve_Bao_Items.class));
             }
         });
-        adapter.SetOnclick_Items_A(new My_order_fragment.OnclickItems_Items() {
+
+        //跳转到评价
+        adapter.SetOnclick_Items_But(new My_order_adapter_one.OnclickItems_but() {
             @Override
-            public void SetOnclick_Items(View view, int position) {
-                Toast.makeText(getContext(), "你点击了我", Toast.LENGTH_SHORT).show();
+            public void SetOnclick(View view, int position) {
+                //
             }
         });
     }

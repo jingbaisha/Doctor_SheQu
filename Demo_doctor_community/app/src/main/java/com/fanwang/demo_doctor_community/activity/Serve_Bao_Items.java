@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
@@ -14,30 +15,35 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by edison on 2018/6/12.
- * 家庭档案
- */
-
-public class My_Record extends Populace_Activity {
+public class Serve_Bao_Items extends Populace_Activity {
 
     @BindView(R.id.title_fragment_content)
     LinearLayout titleFragmentContent;
-
-    private TitleBackFragment titleBackFragment;
+    @BindView(R.id.tv_serve)
+    TextView tvServe;
+    @BindView(R.id.tv_yuyue_one)
+    TextView tvYuyueOne;
+    @BindView(R.id.tv_serve_a)
+    TextView tvServeA;
+    @BindView(R.id.tv_yuyue_two)
+    TextView tvYuyueTwo;
+    @BindView(R.id.tv_serve_b)
+    TextView tvServeB;
+    @BindView(R.id.tv_yuyue_three)
+    TextView tvYuyueThree;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_record);
+        setContentView(R.layout.my_order_fragment_b);
         ButterKnife.bind(this);
-        initView();
         initData();
+        initView();
     }
 
     @Override
     public void initView() {
-        titleBackFragment = new TitleBackFragment().newInstance("我的家庭", "#23b1a5");
+        TitleBackFragment titleBackFragment = new TitleBackFragment().newInstance("服务包详情", "#23b1a5");
         addTitleFragment(titleBackFragment);
     }
 
@@ -45,16 +51,13 @@ public class My_Record extends Populace_Activity {
     public void initData() {
 
     }
-    @OnClick({R.id.bt_a,R.id.bt_b,R.id.bt_c,R.id.bt_d,R.id.but_e})
-    public void Onclick(View view){
+    @OnClick({R.id.tv_yuyue_one,R.id.tv_yuyue_two,R.id.tv_yuyue_three})
+    public void OnClickItems(View view){
         switch (view.getId()){
-                case R.id.bt_a:
-                case R.id.bt_b:
-                case R.id.bt_c:
-                case R.id.bt_d:
-                startActivity(new Intent(this,Health_Record_Activity.class));
-                break;
-
+            case R.id.tv_yuyue_one:
+            case R.id.tv_yuyue_two:
+            case R.id.tv_yuyue_three:
+                startActivity(new Intent(Serve_Bao_Items.this,Qianyue.class));
         }
     }
 }

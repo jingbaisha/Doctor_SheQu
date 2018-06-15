@@ -12,6 +12,7 @@
         android:orientation="vertical" />
 
     <RelativeLayout
+        android:id="@+id/my_problem_a"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y75"
         android:gravity="center">
@@ -49,6 +50,7 @@
         android:background="@color/textblack9" />
 
     <RelativeLayout
+        android:id="@+id/my_problem_b"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y75"
         android:gravity="center">
@@ -86,6 +88,7 @@
         android:background="@color/textblack9" />
 
     <RelativeLayout
+        android:id="@+id/my_problem_c"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y75"
         android:gravity="center">

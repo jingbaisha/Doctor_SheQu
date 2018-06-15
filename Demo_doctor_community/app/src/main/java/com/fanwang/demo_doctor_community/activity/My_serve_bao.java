@@ -12,6 +12,7 @@ import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
 import com.fanwang.demo_doctor_community.fragment.My_Order_Fragment_b;
+import com.fanwang.demo_doctor_community.fragment.my.My_Order_Fragment_one;
 import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by edison on 2018/5/31.
+ * 我的服务包
  */
 
 public class My_serve_bao extends Populace_Activity {
@@ -54,8 +56,9 @@ public class My_serve_bao extends Populace_Activity {
     @Override
     public void initData() {
         for (int i = 0; i < data.length; i++) {
-            mList.add(new My_Order_Fragment_b().getParameter(data[i]));
+            mList.add(new My_Order_Fragment_one().getParameter(data[i]));
         }
+        mList.add(new My_Order_Fragment_one());
         vpMyServeBao.setAdapter(new MyViewpager(getSupportFragmentManager()));
         stlMy.setViewPager(vpMyServeBao);
     }

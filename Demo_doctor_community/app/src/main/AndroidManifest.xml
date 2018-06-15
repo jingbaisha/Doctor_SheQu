@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
@@ -136,7 +137,7 @@
         </activity>
         <activity android:name=".activity.Health_Record_Activity_b">
 
-<<<<<<< HEAD
+        </activity>
         <activity android:name=".activity.Carousel_Items">
 
         </activity>
@@ -145,8 +146,19 @@
         </activity>
         <activity android:name=".activity.Infomation_Items">
 
-=======
->>>>>>> a68d9d6d9f20d205a26bc8446d8ba029c8abf9a4
+        </activity>
+
+        <activity android:name=".activity.Serve_Bao_Items">
+
+        </activity>
+        <activity android:name=".activity.My_Complaint_Item">
+
+        </activity>
+        <activity android:name=".activity.Order_Details_a">
+
+        </activity>
+        <activity android:name=".activity.Problem_one">
+
         </activity>
     </application>
 

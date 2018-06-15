@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fanwang.demo_doctor_community.R;
+import com.fanwang.demo_doctor_community.bean.Eat_bean;
+
+import java.util.List;
 
 /**
  * Created by edison on 2018/6/12.
@@ -16,14 +19,12 @@ import com.fanwang.demo_doctor_community.R;
 public class Eat_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private LayoutInflater inflater;
-    private int[] data = new int[10];
+    private List<Eat_bean> list;
 
-    public Eat_adapter(Context context) {
+    public Eat_adapter(Context context, List<Eat_bean> list) {
         this.context = context;
+        this.list = list;
         inflater = LayoutInflater.from(context);
-        for (int i = 0; i < data.length; i++) {
-            data[i] = 1 + i;
-        }
     }
 
     @Override
@@ -36,20 +37,23 @@ public class Eat_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder viewHolder = (MyViewHolder) holder;
-        viewHolder.textView.setText("08:"+"0"+data[position]);
+        Eat_bean bean = list.get(position);
+        viewHolder.textView.setText(bean.getData());
+        viewHolder.textView_aa.setText(bean.getTime());
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return list.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView textView, textView_aa;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.tv_time);
+            textView_aa = itemView.findViewById(R.id.tv_time_aa);
         }
     }
 }

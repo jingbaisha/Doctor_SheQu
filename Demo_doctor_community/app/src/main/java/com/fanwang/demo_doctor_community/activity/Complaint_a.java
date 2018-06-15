@@ -10,8 +10,7 @@ import com.fanwang.demo_doctor_community.R;
 import com.fanwang.demo_doctor_community.adapter.MyPagerAdapter;
 import com.fanwang.demo_doctor_community.commonality.Populace_Activity;
 import com.fanwang.demo_doctor_community.commonality.TitleBackFragment;
-import com.fanwang.demo_doctor_community.fragment.my.Complaint_fragment_a;
-import com.fanwang.demo_doctor_community.fragment.my.Complaint_fragment_b;
+import com.fanwang.demo_doctor_community.fragment.my.My_Complaint_Fragment_a;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
@@ -22,6 +21,8 @@ import butterknife.ButterKnife;
 
 /**
  * Created by edison on 2018/6/11.
+ * 我的投诉
+ *
  */
 
 public class Complaint_a extends Populace_Activity {
@@ -48,14 +49,17 @@ public class Complaint_a extends Populace_Activity {
 
     @Override
     public void initView() {
-        titleBackFragment = new TitleBackFragment().newInstance("我的预约", "#23b1a5");
+        titleBackFragment = new TitleBackFragment().newInstance("我的投诉", "#23b1a5");
         addTitleFragment(titleBackFragment);
     }
 
     @Override
     public void initData() {
-        mList.add(new Complaint_fragment_a());
-        mList.add(new Complaint_fragment_b());
+
+        for (int i = 0; i < data.length; i++) {
+            mList.add(new My_Complaint_Fragment_a().getParameter(data[i]));
+        }
+
         tlComlaintA.setTabData(data);
         adapter = new MyPagerAdapter(getSupportFragmentManager(), mList, data);
         vpMyComplaintA.setAdapter(adapter);

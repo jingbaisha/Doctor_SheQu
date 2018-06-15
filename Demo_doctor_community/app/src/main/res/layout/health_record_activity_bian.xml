@@ -15,7 +15,7 @@
         android:layout_below="@+id/title_fragment_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/but_save">
+        android:layout_above="@+id/but_baocun_health">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -355,7 +355,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/but_save"
+        android:id="@+id/but_baocun_health"
         android:layout_width="300dp"
         android:layout_height="@dimen/y64"
         android:layout_alignParentBottom="true"

@@ -22,6 +22,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by edison on 2018/5/31.
+ * 我的订单
  */
 
 public class My_Order extends Populace_Activity {
@@ -57,8 +58,10 @@ public class My_Order extends Populace_Activity {
         for (int i = 0; i < data_a.length; i++) {
             fragmentList.add(new My_Order_Fragment_a().getParameter(data_a[i]));
         }
+
         vpMyOrder.setAdapter(new MypagerAdapter(getSupportFragmentManager()));
         stlMyOrder.setViewPager(vpMyOrder);
+
     }
 
     public class MypagerAdapter extends FragmentPagerAdapter {

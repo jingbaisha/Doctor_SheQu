@@ -120,6 +120,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/but_queren"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
